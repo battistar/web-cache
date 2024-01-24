@@ -5,8 +5,10 @@ const titles = [
   "Bram Stoker's Dracula (1992)",
   'Event Horizon (1997)',
   'First Blood (1982)',
+  'Indiana Jones and the Last Crusade (1989)',
   'Terminator 2 Judgment Day (1991)',
   'The Fly (1986)',
+  'The Godfather (1972)',
   'The Naked Gun (1988)',
   'The Nightmare Before Christmas (1993)',
 ];
