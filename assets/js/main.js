@@ -1,4 +1,4 @@
-import env from '../../env';
+import env from '../../const';
 
 const titles = [
   'Alien (1979)',
