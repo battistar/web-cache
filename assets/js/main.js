@@ -117,12 +117,6 @@ function init() {
     const request = objectStore.get(title);
 
     request.addEventListener('success', async () => {
-      fetchCounter++;
-
-      if (fetchCounter === titles.length) {
-        removeLoader();
-      }
-
       if (request.result) {
         console.log('Load from indexDB');
 
@@ -135,6 +129,12 @@ function init() {
 
         displayMovie(imageBlob, videoBlob, title);
         storeMovie(imageBlob, videoBlob, title);
+      }
+
+      fetchCounter++;
+
+      if (fetchCounter === titles.length) {
+        removeLoader();
       }
     });
   }
