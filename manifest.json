@@ -5,8 +5,8 @@
   "background_color": "#0c0c0c",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/web-cache",
+  "start_url": "/web-cache",
   "icons": [
     {
       "src": "assets/images/icons/icon-72x72.png",
