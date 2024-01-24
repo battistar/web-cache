@@ -6,6 +6,8 @@ self.addEventListener('install', (e) => {
 
     await cache.addAll([
       '/web-cache/',
+      '/web-cache/index.html',
+      '/web-cache/manifest.json',
       '/web-cache/assets/css/style.css',
       '/web-cache/assets/js/main.js',
       '/web-cache/assets/fonts/Karla-VariableFont_wght.ttf',
