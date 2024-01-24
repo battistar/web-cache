@@ -75,7 +75,21 @@ async function fetchImage(title) {
   return await response.blob();
 }
 
+async function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    try {
+      await navigator.serviceWorker.register('/sw.js');
+
+      console.log('Service worker registered');
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+
 function init() {
+  registerServiceWorker();
+
   for (const title of titles) {
     const objectStore = db.transaction('movies_os').objectStore('movies_os');
     const request = objectStore.get(title);
