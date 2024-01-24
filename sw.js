@@ -1,3 +1,5 @@
+import env from './env';
+
 self.addEventListener('install', (e) => {
   console.log('install');
 
@@ -5,11 +7,11 @@ self.addEventListener('install', (e) => {
     const cache = await caches.open('trailers');
 
     await cache.addAll([
-      '/',
-      '/assets/css/style.css',
-      '/assets/js/main.js',
-      '/assets/fonts/Karla-VariableFont_wght.ttf',
-      '/assets/images/icons/favicon.ico',
+      `${env.repository}/`,
+      `${env.repository}/assets/css/style.css`,
+      `${env.repository}/assets/js/main.js`,
+      `${env.repository}/assets/fonts/Karla-VariableFont_wght.ttf`,
+      `${env.repository}/assets/images/icons/favicon.ico`,
     ]);
   };
 
