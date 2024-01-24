@@ -11,6 +11,8 @@ const titles = [
   'The Nightmare Before Christmas (1993)',
 ];
 
+let fetchCounter = 0;
+
 let db;
 
 function displayMovie(image, mp4, title) {
@@ -87,7 +89,27 @@ async function registerServiceWorker() {
   }
 }
 
+function showLoader() {
+  const containerDiv = document.createElement('div');
+  containerDiv.id = 'loader';
+  containerDiv.classList.add('loader__container');
+  containerDiv.textContent = 'Fetching data...';
+
+  const innerDiv = document.createElement('div');
+  innerDiv.classList.add('loader');
+
+  document.body.appendChild(containerDiv);
+  containerDiv.appendChild(innerDiv);
+}
+
+function removeLoader() {
+  const div = document.querySelector('#loader');
+  document.body.removeChild(div);
+}
+
 function init() {
+  showLoader();
+
   registerServiceWorker();
 
   for (const title of titles) {
@@ -95,6 +117,12 @@ function init() {
     const request = objectStore.get(title);
 
     request.addEventListener('success', async () => {
+      fetchCounter++;
+
+      if (fetchCounter === titles.length) {
+        removeLoader();
+      }
+
       if (request.result) {
         console.log('Load from indexDB');
 
