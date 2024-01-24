@@ -9,7 +9,7 @@ self.addEventListener('install', (e) => {
       '/assets/css/style.css',
       '/assets/js/main.js',
       '/assets/fonts/Karla-VariableFont_wght.ttf',
-      '/assets/images/favicon.ico',
+      '/assets/images/icons/favicon.ico',
     ]);
   };
 
