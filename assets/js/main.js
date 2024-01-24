@@ -1,5 +1,3 @@
-import env from '../../const';
-
 const titles = [
   'Alien (1979)',
   'Beetlejuice (1988)',
@@ -80,7 +78,7 @@ async function fetchImage(title) {
 async function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     try {
-      await navigator.serviceWorker.register(`${env.repository}/sw.js`);
+      await navigator.serviceWorker.register(`/web-cache/sw.js`);
 
       console.log('Service worker registered');
     } catch (error) {
